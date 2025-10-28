@@ -1,0 +1,244 @@
+[
+{
+    "id": "ouders_identiteit_0",
+    "position": 1,
+    "question": "Wat zijn de volledige namen en adressen van beide ouders?",
+    "required_details": [
+      "Volledige naam ouder 1", "Adres ouder 1 (straat+nr, postcode, plaats)",
+      "Volledige naam ouder 2", "Adres ouder 2 (straat+nr, postcode, plaats)"
+    ],
+    "summary_style": "Noem beide ouders met volledige naam en woonadres.",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "partijen_gezag_1",
+    "position": 2,
+    "question": "Wat is jullie juridische situatie, wie heeft het gezag en wanneer is de relatie gestart en/of beëindigd?",
+    "required_details": [
+      "Relatievorm (gehuwd/geregistreerd/samenwonend/relatie beëindigd)",
+      "Gezag (gezamenlijk/eenhoofdig)",
+      "Datum start/einde relatie (YYYY-MM-DD)"
+    ],
+    "summary_style": "Korte zin met relatievorm en (gezamenlijk) gezag.",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "kinderen_identiteit_2",
+    "position": 3,
+    "question": "Welke kinderen vallen onder dit plan? (per kind: volledige naam, geboortedatum en -plaats)",
+    "required_details": ["Naam per kind", "Geboortedatum per kind (YYYY-MM-DD)", "Geboorteplaats per kind"],
+    "summary_style": "Lijst: Naam – YYYY-MM-DD (geboorteplaats).",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "betrokkenheid_kinderen_3",
+    "position": 4,
+    "question": "Hoe zijn de kinderen betrokken bij het plan (passend bij hun leeftijd)?",
+    "required_details": ["Korte beschrijving gesprek(ken) met kinderen", "Moment van betrekken (datum)", "Wat is met de kinderen besproken"],
+    "summary_style": "1–2 zinnen over betrokkenheid kinderen en moment.",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "waarden_principes_4",
+    "position": 5,
+    "question": "Welke gezamenlijke principes hanteren jullie als ouders (respectvol ouderschap)?",
+    "required_details": ["Minimaal 3 principes (bv. niet negatief spreken, kind centraal, conflicten buiten gehoor kind)"],
+    "summary_style": "Opsomming; elk principe op een nieuwe regel.",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "hoofdverblijf_inschrijving_5",
+    "position": 6,
+    "question": "Wat is de hoofdverblijfplaats per kind en wie int kinderbijslag/kindgebonden budget?",
+    "required_details": ["Hoofdverblijf per kind (adres/ouder)", "Inschrijving BRP geregeld? (ja/nee + datum)", "Ontvanger kinderbijslag/KGB"],
+    "summary_style": "Per kind: hoofdverblijf (adres/ouder) en wie int kinderbijslag/KGB.",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "zorgverdeling_week_6",
+    "position": 7,
+    "question": "Wat is het wekelijkse zorgschema (ochtend/middag/avond/nacht; even/oneven weken)?",
+    "required_details": [
+      "Even week: dag → (ochtend/middag/avond/nacht) → ouder",
+      "Oneven week: dag → (ochtend/middag/avond/nacht) → ouder"
+    ],
+    "summary_style": "Eén regel met kernritme; afwijkingen kort benoemd.",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "wissels_vervoer_7",
+    "position": 8,
+    "question": "Hoe en waar vinden overdrachten plaats en wie haalt/brengt?",
+    "required_details": ["Wisselmomenten (dagen/tijden)", "Locatie(s)", "Wie haalt/brengt", "Regel bij afwezigheid/ziekte (vervanging)"],
+    "summary_style": "Bondig: wisselmoment + plek + wie haalt/brengt + vervangingsregel.",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "contact_met_andere_ouder_8",
+    "position": 9,
+    "question": "Hoe houden kinderen contact met de andere ouder als ze niet daar zijn?",
+    "required_details": ["Kanaal (bellen/video)", "Frequentie/duur", "Wie initieert", "Grenzen (tijdvakken/rustmomenten)"],
+    "summary_style": "1 zin met kanaal, frequentie en eventuele grenzen.",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "school_beleid_9",
+    "position": 10,
+    "question": "Welke afspraken maken jullie over school (keuze, ouderavonden, informatie-uitwisseling, huiswerk)?",
+    "required_details": [
+      "Besluitvorming schoolkeuze (samen/consentregel)",
+      "Aanwezigheid ouderavonden (samen/apart)",
+      "Ontvangen & doorsturen schoolinfo (middel/frequentie)",
+      "Huiswerkbegeleiding (wie/wanneer)"
+    ],
+    "summary_style": "2 zinnen over besluitvorming, aanwezigheid en infodeling.",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "medisch_beleid_10",
+    "position": 11,
+    "question": "Hoe regelen jullie medische zorg (spoed/planbare zorg, toestemming, medicatie)?",
+    "required_details": [
+      "Wie plant niet-spoedeisende afspraken",
+      "Spoedprotocol (wie beslist + direct informeren)",
+      "Medicatiebeheer (bewaarplek, toediening, afstemming)",
+      "Tandartscontrole (frequentie/afspraak wie regelt)"
+    ],
+    "summary_style": "Bondig protocol voor spoed en planbare zorg + medicatie.",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "identiteit_documenten_11",
+    "position": 12,
+    "question": "Wie beheert legitimatie/paspoorten en hoe regelen jullie toestemming voor reizen?",
+    "required_details": ["Beheer identiteitsbewijs per kind (ouder)", "Toestemmingsprocedure buitenland (formulier + termijnen)"],
+    "summary_style": "Beheerder per kind + afspraak toestemming reizen.",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "verzekeringen_12",
+    "position": 13,
+    "question": "Welke verzekeringen zijn geregeld voor de kinderen?",
+    "required_details": ["Zorgverzekering (op polis van welke ouder)", "WA-verzekering (beide/één)"],
+    "summary_style": "1 zin: zorg- en WA-verzekering geregeld (op wiens polis).",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "vakanties_13",
+    "position": 14,
+    "question": "Hoe verdelen jullie schoolvakanties?",
+    "required_details": ["Verdeling per vakantie (even/oneven of %)", "Keuzewijze/keuzedeadlines", "Bereikbaarheid & tijdelijke verblijfplaats"],
+    "summary_style": "Tabelsamenvatting per vakantie + keuze/rotatie.",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "feestdagen_14",
+    "position": 15,
+    "question": "Hoe verdelen jullie de feestdagen (incl. samenloop met vakanties)?",
+    "required_details": ["Verdeling per feestdag (even/oneven jaren)", "Regel bij overlap met vakantie"],
+    "summary_style": "Korte lijst: per feestdag wie waar, met overlapregel.",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "verjaardagen_15",
+    "position": 16,
+    "question": "Hoe regelen jullie verjaardagen (kind(eren) en ouders)?",
+    "required_details": ["Dagdeel/locatie dag zelf", "Kinderfeestje (wie organiseert)", "Cadeauregeling", "Contact met niet-verblijvende ouder"],
+    "summary_style": "Korte zin per categorie (kind/ouders).",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "familie_contacten_16",
+    "position": 17,
+    "question": "Welke afspraken gelden over contact met familie (opa/oma e.d.) en bij overlijden van een ouder?",
+    "required_details": ["Contact met familie andere ouder niet belemmeren (ja/nee + nuances)", "Bij overlijden: behoud familiebanden (toelichting)"],
+    "summary_style": "1 zin over familiecontacten + 1 zin over regeling bij overlijden.",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "opvang_oppas_17",
+    "position": 18,
+    "question": "Welke opvang/oppas gebruiken jullie (BSO/oppas/grootouders) en wie regelt/betaalt?",
+    "required_details": ["Instantie/namen", "Dagen/tijden", "Wie regelt", "Kostenverdeling"],
+    "summary_style": "Korte zin over opvangvormen, planning en kosten.",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "sport_hobby_18",
+    "position": 19,
+    "question": "Welke afspraken gelden over sport/muziek/hobby’s (aanmelding, begeleiding, vervoer, kosten)?",
+    "required_details": ["Activiteit per kind", "Wie beslist/rijdt", "Aanschaf materiaal", "Kostenverdeling"],
+    "summary_style": "Per activiteit: besluitvorming, vervoer, kosten.",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "communicatie_consultatie_19",
+    "position": 20,
+    "question": "Hoe wisselen jullie informatie uit en hoe vaak overleg je formeel?",
+    "required_details": ["Kanalen (mail/app/schriftje/co-parenting app)", "Frequentie vast overleg (bv. maandelijks/halfjaarlijks)", "Onderwerpen voor gezamenlijk besluit"],
+    "summary_style": "Kanaal + overlegfrequentie + kernonderwerpen.",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "financien_20",
+    "position": 21,
+    "question": "Hoe verdelen jullie de kosten van de kinderen (alimentatie/kinderrekening)?",
+    "required_details": [
+      "Eigen aandeel & verdeelsleutel of alimentatiebedrag (€) en ingangsdatum",
+      "Betaaldatum/IBAN en wettelijke indexatie (ja/nee)",
+      "Zorgkorting (indien van toepassing)",
+      "Hoge/uitzonderlijke kosten (wat valt eronder; verdeling)",
+      "Kinderrekening (ja/nee; stortingsbedragen per ouder)"
+    ],
+    "summary_style": "Zin met bedrag/verdeling, betaaldatum, indexatie en kinderrekening/hoge kosten.",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "jongmeerderjarig_21",
+    "position": 22,
+    "question": "Welke afspraken gelden bij 18–21 jaar (betaling aan kind) en eventueel studiebijdrage >21?",
+    "required_details": ["Betaalwijze (aan kind/aan ouder)", "Rekening van het kind", "Looptijd en indexatie", "Eventuele studiebijdrage (bedrag/duur)"],
+    "summary_style": "1 zin 18–21 (betaling aan kind) + zin over eventuele studiebijdrage.",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "spaarrekeningen_kind_22",
+    "position": 23,
+    "question": "Bestaan er spaarrekeningen op naam van het kind en hoe beheer je die?",
+    "required_details": ["Rekening(en) + IBAN", "Beheerder", "Transparantie/afspraken over aanwending", "Maandelijkse inleg (ja/nee; bedrag)"],
+    "summary_style": "Zin over beheer + (optioneel) vaste inleg.",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "verhuizen_23",
+    "position": 24,
+    "question": "Welke afspraken gelden bij verhuizen (afstand/reistijd, meldtermijn, herziening schema)?",
+    "required_details": ["Meldtermijn (dagen/weken)", "Max. afstand of reistijd", "Procedure herziening zorgregeling"],
+    "summary_style": "Bondig: meldtermijn + grens (km/min) + herzieningsproces.",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "nieuwe_partner_24",
+    "position": 25,
+    "question": "Hoe en wanneer introduceren jullie een nieuwe partner aan het kind?",
+    "required_details": ["Moment/voorwaarden introductie", "Afstemming tussen ouders (ja/nee; hoe)"],
+    "summary_style": "1 zin over voorwaarden + 1 zin over afstemming.",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "evaluatie_geschillen_25",
+    "position": 26,
+    "question": "Wanneer en hoe evalueren jullie dit plan, en wat is de route bij geschillen?",
+    "required_details": ["Evaluatiefrequentie (bv. jaarlijks/halfjaarlijks)", "Bemiddeling/mediator (naam/organisatie)", "Eventuele stap naar rechter"],
+    "summary_style": "Zin over evaluatie + zin over bemiddeling/geschilroute.",
+    "answer": null, "summary": null, "status": "pending"
+  },
+  {
+    "id": "ondertekening_26",
+    "position": 27,
+    "question": "Zijn jullie akkoord met ondertekening als alle velden compleet zijn?",
+    "required_details": ["Plaats/datum ondertekening", "Naam ouder 1 + handtekening", "Naam ouder 2 + handtekening"],
+    "summary_style": "Plaats, datum en beide namen t.b.v. ondertekening.",
+    "answer": null, "summary": null, "status": "pending"
+  }
+]
