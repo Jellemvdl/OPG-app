@@ -147,12 +147,9 @@
   {
     "id": "contact_met_andere_ouder_8",
     "position": 12,
-    "question": "Hoe houden kinderen contact met de andere ouder als ze niet daar zijn?",
+    "question": "Hoe houden kinderen contact met de andere ouder als ze niet daar zijn? (e.g. kanaal, frequentie, duur, wie initieert)",
     "required_details": [
-      "Kanaal (bellen/video)",
-      "Frequentie/duur",
-      "Wie initieert",
-      "Grenzen (tijdvakken/rustmomenten)"
+      "Kanaal (bellen/video)"
     ],
     "summary_style": "1 zin met kanaal, frequentie en eventuele grenzen.",
     "answer": null,
@@ -451,4 +448,3 @@
     "status": "pending"
   }
 ]
-
