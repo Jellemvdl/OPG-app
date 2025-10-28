@@ -88,12 +88,16 @@ def load_questions() -> List[Dict[str, Any]]:
 # ---------- QUESTION LIST ----------
 question_list_template: List[Dict[str, Any]] = load_questions()
 
+tmpl = st.secrets["SYSTEM_INSTRUCTION"]
+
 today_nl = time.strftime("%d-%m-%Y")
+
+system_instruction = tmpl.replace("{{TODAY_NL}}", today_nl)
 
 # ---------- SYSTEM INSTRUCTION ----------
 # Raw string to avoid \s escape warnings inside regex-like text.
 
-system_instruction = st.secrets.get("SYSTEM_INSTRUCTION")
+# system_instruction = st.secrets.get("SYSTEM_INSTRUCTION")
 if not system_instruction and "SYSTEM_INSTRUCTION_B64" in st.secrets:
     system_instruction = base64.b64decode(st.secrets["SYSTEM_INSTRUCTION_B64"]).decode("utf-8")
 
