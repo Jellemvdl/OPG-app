@@ -740,8 +740,6 @@ for msg in st.session_state.history:
 
 # Hint about what’s next
 _, _, next_q = compute_progress()
-if next_q:
-    st.info(f"**Volgende vraag** ({next_q['position']}): {next_q['question']}")
 
 # Chat input
 user_text = st.chat_input("Typ je antwoord of vraag…")
