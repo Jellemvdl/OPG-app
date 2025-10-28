@@ -17,7 +17,7 @@
   {
     "id": "juridische_situatie_1a",
     "position": 2,
-    "question": "Wat is jullie juridische situatie?",
+    "question": "Wat is jullie burgerlijke staat? (gehuwd/geregistreerd/samenwonend/relatie beëindigd)",
     "required_details": [
       "Relatievorm (gehuwd/geregistreerd/samenwonend/relatie beëindigd)"
     ],
@@ -451,3 +451,4 @@
     "status": "pending"
   }
 ]
+
