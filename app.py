@@ -10,6 +10,7 @@ Streamlit UI for the 'Ouderschapsplan' conversational assistant.
 import os
 import json
 import time
+import re
 from typing import List, Dict, Any
 from io import BytesIO
 
@@ -133,6 +134,46 @@ def get_client():
     )
     return client
 
+# ---------- HELPERS ----------
+
+def _extract_balanced_json(text: str) -> str | None:
+    start = text.find('{')
+    if start == -1:
+        return None
+    depth = 0
+    for i, ch in enumerate(text[start:], start=start):
+        if ch == '{': depth += 1
+        elif ch == '}':
+            depth -= 1
+            if depth == 0:
+                return text[start:i+1]
+    return None
+
+def _normalize_quotes(s: str) -> str:
+    return (s.replace('\u201c', '"').replace('\u201d', '"')
+             .replace('\u2018', "'").replace('\u2019', "'"))
+
+def coerce_json(raw_text: str) -> dict:
+    if not raw_text:
+        return {}
+    s = raw_text.lstrip('\ufeff').strip()
+    s = _normalize_quotes(s)
+    # Try direct parse
+    try:
+        return json.loads(s)
+    except Exception:
+        pass
+    # Try balanced extract
+    core = _extract_balanced_json(s)
+    if core:
+        try:
+            return json.loads(core)
+        except Exception:
+            # last resort: escape raw newlines inside strings
+            core2 = core.replace('\r', '\\r').replace('\n', '\\n')
+            return json.loads(core2)
+    raise ValueError("Could not coerce model output to JSON")
+    
 # ---------- MODEL CALL ----------
 def send_to_gemini(user_input: str, sender_id: str = "Sandra") -> Dict[str, Any]:
     from google.genai import types  # local import keeps module load inside app
@@ -170,16 +211,26 @@ def send_to_gemini(user_input: str, sender_id: str = "Sandra") -> Dict[str, Any]
         config=cfg,
     )
     raw_text = resp.text or "{}"
-
+    
     try:
-        return json.loads(raw_text)
-    except json.JSONDecodeError:
-        # Fallback: try to salvage the "answer" field
-        import re
+        out = coerce_json(raw_text)
+    except Exception:
+        # salvage minimal answer if possible
         m = re.search(r'"answer"\s*:\s*"([^"]*(?:\\"[^"]*)*)"', raw_text)
         if m:
-            return {"answer": m.group(1).replace('\\"', '"'), "updated_questions": None}
-        raise
+            out = {"answer": m.group(1).replace('\\"', '"'), "updated_questions": None}
+        else:
+            raise
+    return out
+    # try:
+    #     return json.loads(raw_text)
+    # except json.JSONDecodeError:
+    #     # Fallback: try to salvage the "answer" field
+    #     import re
+    #     m = re.search(r'"answer"\s*:\s*"([^"]*(?:\\"[^"]*)*)"', raw_text)
+    #     if m:
+    #         return {"answer": m.group(1).replace('\\"', '"'), "updated_questions": None}
+    #     raise
 
 # ---------- HELPERS ----------
 def merge_updates(updated_questions: List[Dict[str, Any]]):
