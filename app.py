@@ -88,6 +88,8 @@ def load_questions() -> List[Dict[str, Any]]:
 # ---------- QUESTION LIST ----------
 question_list_template: List[Dict[str, Any]] = load_questions()
 
+today_nl = time.strftime("%d-%m-%Y")
+
 # ---------- SYSTEM INSTRUCTION ----------
 # Raw string to avoid \s escape warnings inside regex-like text.
 
