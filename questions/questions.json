@@ -91,22 +91,34 @@
     "status": "pending"
   },
   {
-    "id": "hoofdverblijf_inschrijving_5",
+    "id": "hoofdverblijf_5a",
     "position": 8,
-    "question": "Wat is de hoofdverblijfplaats per kind en wie int kinderbijslag/kindgebonden budget?",
+    "question": "Wat is de hoofdverblijfplaats per kind?",
     "required_details": [
       "Hoofdverblijf per kind (adres/ouder)",
-      "Inschrijving BRP geregeld? (ja/nee + datum)",
-      "Ontvanger kinderbijslag/KGB"
+      "Inschrijving BRP geregeld? (ja/nee + datum)"
     ],
-    "summary_style": "Per kind: hoofdverblijf (adres/ouder) en wie int kinderbijslag/KGB.",
+    "summary_style": "Per kind: hoofdverblijf en inschrijving BRP.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "kinderbijslag_budget_5b",
+    "position": 9,
+    "question": "Wie int de kinderbijslag en het kindgebonden budget?",
+    "required_details": [
+      "Ontvanger kinderbijslag",
+      "Ontvanger kindgebonden budget"
+    ],
+    "summary_style": "Wie ontvangt kinderbijslag en KGB.",
     "answer": null,
     "summary": null,
     "status": "pending"
   },
   {
     "id": "zorgverdeling_week_6",
-    "position": 9,
+    "position": 10,
     "question": "Wat is het wekelijkse zorgschema (ochtend/middag/avond/nacht; even/oneven weken)?",
     "required_details": [
       "Even week: dag → (ochtend/middag/avond/nacht) → ouder",
@@ -119,7 +131,7 @@
   },
   {
     "id": "wissels_vervoer_7",
-    "position": 10,
+    "position": 11,
     "question": "Hoe en waar vinden overdrachten plaats en wie haalt/brengt?",
     "required_details": [
       "Wisselmomenten (dagen/tijden)",
@@ -134,7 +146,7 @@
   },
   {
     "id": "contact_met_andere_ouder_8",
-    "position": 11,
+    "position": 12,
     "question": "Hoe houden kinderen contact met de andere ouder als ze niet daar zijn?",
     "required_details": [
       "Kanaal (bellen/video)",
@@ -149,7 +161,7 @@
   },
   {
     "id": "school_beleid_9",
-    "position": 12,
+    "position": 13,
     "question": "Welke afspraken maken jullie over school (keuze, ouderavonden, informatie-uitwisseling, huiswerk)?",
     "required_details": [
       "Besluitvorming schoolkeuze (samen/consentregel)",
@@ -164,7 +176,7 @@
   },
   {
     "id": "medisch_beleid_10",
-    "position": 13,
+    "position": 14,
     "question": "Hoe regelen jullie medische zorg (spoed/planbare zorg, toestemming, medicatie)?",
     "required_details": [
       "Wie plant niet-spoedeisende afspraken",
@@ -178,21 +190,32 @@
     "status": "pending"
   },
   {
-    "id": "identiteit_documenten_11",
-    "position": 14,
-    "question": "Wie beheert legitimatie/paspoorten en hoe regelen jullie toestemming voor reizen?",
+    "id": "identiteit_documenten_11a",
+    "position": 15,
+    "question": "Wie beheert de legitimatiebewijzen en paspoorten van de kinderen?",
     "required_details": [
-      "Beheer identiteitsbewijs per kind (ouder)",
+      "Beheer identiteitsbewijs per kind (ouder)"
+    ],
+    "summary_style": "Beheerder per kind genoemd.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "reistoestemming_11b",
+    "position": 16,
+    "question": "Hoe regelen jullie toestemming voor reizen naar het buitenland?",
+    "required_details": [
       "Toestemmingsprocedure buitenland (formulier + termijnen)"
     ],
-    "summary_style": "Beheerder per kind + afspraak toestemming reizen.",
+    "summary_style": "Afspraak over toestemming voor reizen.",
     "answer": null,
     "summary": null,
     "status": "pending"
   },
   {
     "id": "verzekeringen_12",
-    "position": 15,
+    "position": 17,
     "question": "Welke verzekeringen zijn geregeld voor de kinderen?",
     "required_details": [
       "Zorgverzekering (op polis van welke ouder)",
@@ -205,7 +228,7 @@
   },
   {
     "id": "vakanties_13",
-    "position": 16,
+    "position": 18,
     "question": "Hoe verdelen jullie schoolvakanties?",
     "required_details": [
       "Verdeling per vakantie (even/oneven of %)",
@@ -219,7 +242,7 @@
   },
   {
     "id": "feestdagen_14",
-    "position": 17,
+    "position": 19,
     "question": "Hoe verdelen jullie de feestdagen (incl. samenloop met vakanties)?",
     "required_details": [
       "Verdeling per feestdag (even/oneven jaren)",
@@ -232,7 +255,7 @@
   },
   {
     "id": "verjaardagen_15",
-    "position": 18,
+    "position": 20,
     "question": "Hoe regelen jullie verjaardagen (kind(eren) en ouders)?",
     "required_details": [
       "Dagdeel/locatie dag zelf",
@@ -246,21 +269,32 @@
     "status": "pending"
   },
   {
-    "id": "familie_contacten_16",
-    "position": 19,
-    "question": "Welke afspraken gelden over contact met familie (opa/oma e.d.) en bij overlijden van een ouder?",
+    "id": "familie_contacten_16a",
+    "position": 21,
+    "question": "Welke afspraken gelden over contact van de kinderen met familie, zoals opa’s en oma’s?",
     "required_details": [
-      "Contact met familie andere ouder niet belemmeren (ja/nee + nuances)",
-      "Bij overlijden: behoud familiebanden (toelichting)"
+      "Contact met familie andere ouder niet belemmeren (ja/nee + toelichting)"
     ],
-    "summary_style": "1 zin over familiecontacten + 1 zin over regeling bij overlijden.",
+    "summary_style": "Afspraken over contact met familieleden.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "overlijden_ouder_16b",
+    "position": 22,
+    "question": "Wat is afgesproken over de situatie bij overlijden van een ouder?",
+    "required_details": [
+      "Beleid bij overlijden ouder (behoud familiebanden, voogdij, contactregeling)"
+    ],
+    "summary_style": "Afspraken over situatie bij overlijden van een ouder.",
     "answer": null,
     "summary": null,
     "status": "pending"
   },
   {
     "id": "opvang_oppas_17",
-    "position": 20,
+    "position": 23,
     "question": "Welke opvang/oppas gebruiken jullie (BSO/oppas/grootouders) en wie regelt/betaalt?",
     "required_details": [
       "Instantie/namen",
@@ -275,7 +309,7 @@
   },
   {
     "id": "sport_hobby_18",
-    "position": 21,
+    "position": 24,
     "question": "Welke afspraken gelden over sport/muziek/hobby’s (aanmelding, begeleiding, vervoer, kosten)?",
     "required_details": [
       "Activiteit per kind",
@@ -289,22 +323,35 @@
     "status": "pending"
   },
   {
-    "id": "communicatie_consultatie_19",
-    "position": 22,
-    "question": "Hoe wisselen jullie informatie uit en hoe vaak overleg je formeel?",
+    "id": "communicatie_19a",
+    "position": 25,
+    "question": "Hoe wisselen jullie informatie uit over de kinderen?",
     "required_details": [
       "Kanalen (mail/app/schriftje/co-parenting app)",
-      "Frequentie vast overleg (bv. maandelijks/halfjaarlijks)",
-      "Onderwerpen voor gezamenlijk besluit"
+      "Welke informatie wordt gedeeld (school, gezondheid, praktische zaken)"
     ],
-    "summary_style": "Kanaal + overlegfrequentie + kernonderwerpen.",
+    "summary_style": "Communicatiekanalen en soort informatie die wordt gedeeld.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "overleg_19b",
+    "position": 26,
+    "question": "Hoe vaak en op welke manier hebben jullie formeel overleg?",
+    "required_details": [
+      "Frequentie vast overleg (bv. maandelijks/halfjaarlijks)",
+      "Onderwerpen voor gezamenlijk besluit",
+      "Manier van verslaglegging of opvolging"
+    ],
+    "summary_style": "Frequentie en invulling van formeel overleg.",
     "answer": null,
     "summary": null,
     "status": "pending"
   },
   {
     "id": "financien_20",
-    "position": 23,
+    "position": 27,
     "question": "Hoe verdelen jullie de kosten van de kinderen (alimentatie/kinderrekening)?",
     "required_details": [
       "Eigen aandeel & verdeelsleutel of alimentatiebedrag (€) en ingangsdatum",
@@ -320,7 +367,7 @@
   },
   {
     "id": "jongmeerderjarig_21",
-    "position": 24,
+    "position": 28,
     "question": "Welke afspraken gelden bij 18–21 jaar (betaling aan kind) en eventueel studiebijdrage >21?",
     "required_details": [
       "Betaalwijze (aan kind/aan ouder)",
@@ -335,7 +382,7 @@
   },
   {
     "id": "spaarrekeningen_kind_22",
-    "position": 25,
+    "position": 29,
     "question": "Bestaan er spaarrekeningen op naam van het kind en hoe beheer je die?",
     "required_details": [
       "Rekening(en) + IBAN",
@@ -350,7 +397,7 @@
   },
   {
     "id": "verhuizen_23",
-    "position": 26,
+    "position": 30,
     "question": "Welke afspraken gelden bij verhuizen (afstand/reistijd, meldtermijn, herziening schema)?",
     "required_details": [
       "Meldtermijn (dagen/weken)",
@@ -364,7 +411,7 @@
   },
   {
     "id": "nieuwe_partner_24",
-    "position": 27,
+    "position": 31,
     "question": "Hoe en wanneer introduceren jullie een nieuwe partner aan het kind?",
     "required_details": [
       "Moment/voorwaarden introductie",
@@ -377,7 +424,7 @@
   },
   {
     "id": "evaluatie_geschillen_25",
-    "position": 28,
+    "position": 32,
     "question": "Wanneer en hoe evalueren jullie dit plan, en wat is de route bij geschillen?",
     "required_details": [
       "Evaluatiefrequentie (bv. jaarlijks/halfjaarlijks)",
@@ -391,7 +438,7 @@
   },
   {
     "id": "ondertekening_26",
-    "position": 29,
+    "position": 33,
     "question": "Zijn jullie akkoord met ondertekening als alle velden compleet zijn?",
     "required_details": [
       "Plaats/datum ondertekening",
