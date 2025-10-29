@@ -201,7 +201,7 @@ def send_to_gemini(user_input: str, sender_id: str = "Sandra") -> Dict[str, Any]
     cfg = types.GenerateContentConfig(
         system_instruction=system_instruction,
         temperature=0.4,
-        max_output_tokens=2048,
+        max_output_tokens=8192,
         response_mime_type="application/json",
     )
 
@@ -220,7 +220,11 @@ def send_to_gemini(user_input: str, sender_id: str = "Sandra") -> Dict[str, Any]
         if m:
             out = {"answer": m.group(1).replace('\\"', '"'), "updated_questions": None}
         else:
-            raise
+            raise ValueError(
+                f"Could not parse model response. Length: {len(raw_text)} chars. "
+                f"First 200 chars: {raw_text[:200]}... "
+                f"Last 200 chars: ...{raw_text[-200:]}"
+            )
     return out
     # try:
     #     return json.loads(raw_text)
