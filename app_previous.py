@@ -24,15 +24,6 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, Tabl
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_CENTER, TA_LEFT
 
-# ---------- ENV & CONFIG ----------
-load_dotenv()
-PROJECT_ID = os.getenv("PROJECT_ID")
-LOCATION   = os.getenv("LOCATION", "europe-west4")
-MODEL_ID   = os.getenv("MODEL_ID", "gemini-2.5-flash")
-
-if not PROJECT_ID:
-    raise ValueError("PROJECT_ID environment variable is required (.env)")
-    
 # ---------- PAGE SETUP ----------
 st.set_page_config(page_title="Ouderschapsplan Assistent", layout="wide")
 
