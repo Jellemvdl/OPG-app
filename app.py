@@ -33,13 +33,57 @@ from reportlab.pdfbase.ttfonts import TTFont
 from jinja2 import Environment, BaseLoader, StrictUndefined, TemplateError
 
 # ---------- ENV & CONFIG ----------
-load_dotenv()
-PROJECT_ID = os.getenv("PROJECT_ID")
-LOCATION   = os.getenv("LOCATION", "europe-west4")
-MODEL_ID   = os.getenv("MODEL_ID", "gemini-2.5-flash")
+# load_dotenv()
+# PROJECT_ID = os.getenv("PROJECT_ID")
+# LOCATION   = os.getenv("LOCATION", "europe-west4")
+# MODEL_ID   = os.getenv("MODEL_ID", "gemini-2.5-flash")
 
-if not PROJECT_ID:
-    raise ValueError("PROJECT_ID environment variable is required (.env)")
+# if not PROJECT_ID:
+#     raise ValueError("PROJECT_ID environment variable is required (.env)")
+
+def _bootstrap_gcp_from_secrets() -> Dict[str, str]:
+    missing = []
+    for k in ["PROJECT_ID", "LOCATION", "MODEL_ID", "GCP_SA_KEY_JSON"]:
+        if k not in st.secrets:
+            missing.append(k)
+    if missing:
+        st.error(f"Missing Streamlit secrets: {', '.join(missing)}")
+        st.stop()
+
+    project_id = st.secrets["PROJECT_ID"]
+    location   = st.secrets["LOCATION"]
+    model_id   = st.secrets["MODEL_ID"]
+    sa_json    = st.secrets["GCP_SA_KEY_JSON"]
+
+    # Write JSON to /tmp and set GOOGLE_APPLICATION_CREDENTIALS
+    sa_path = "/tmp/gcp_sa.json"
+    try:
+        # Validate JSON is well-formed
+        sa_obj = json.loads(sa_json)
+    except Exception as e:
+        st.error(f"GCP_SA_KEY_JSON is not valid JSON: {e}")
+        st.stop()
+
+    with open(sa_path, "w") as f:
+        json.dump(sa_obj, f)
+
+    # Force the environment variable to point to the temp file
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = sa_path
+
+    # Also clear any old/incorrect values that might be set by the environment
+    # (prevents the library from trying to use a non-existent file)
+    for var in ("GOOGLE_CLOUD_PROJECT", "GCLOUD_PROJECT"):
+        if var in os.environ and not os.environ[var]:
+            del os.environ[var]
+
+    return {
+        "PROJECT_ID": project_id,
+        "LOCATION": location,
+        "MODEL_ID": model_id,
+        "SA_PATH": sa_path,
+    }
+
+AUTH = _bootstrap_gcp_from_secrets()
 
 # Load question list from external JSON file
 def load_questions():
