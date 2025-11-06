@@ -85,6 +85,10 @@ def _bootstrap_gcp_from_secrets() -> Dict[str, str]:
 
 AUTH = _bootstrap_gcp_from_secrets()
 
+PROJECT_ID = AUTH["PROJECT_ID"]
+LOCATION   = AUTH["LOCATION"]
+MODEL_ID   = AUTH["MODEL_ID"]
+
 # Load question list from external JSON file
 def load_questions():
     """Load questions from the questions.json file."""
