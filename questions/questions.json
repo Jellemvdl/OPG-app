@@ -1,0 +1,599 @@
+[
+  {
+    "id": "ouders_identiteit_0",
+    "position": 1,
+    "question": "Wat zijn de volledige namen en adressen van beide ouders?",
+    "required_details": [
+      "Volledige naam ouder 1",
+      "Adres ouder 1 (straat+nr, postcode, plaats)",
+      "Volledige naam ouder 2",
+      "Adres ouder 2 (straat+nr, postcode, plaats)"
+    ],
+    "fields": {
+      "ouder1_naam": "string: volledige naam",
+      "ouder1_adres": "string: straat+nr, postcode, plaats",
+      "ouder2_naam": "string: volledige naam",
+      "ouder2_adres": "string: straat+nr, postcode, plaats"
+    },
+    "summary_template": "De ouders zijn {{ ouder1_naam }}, wonende aan {{ ouder1_adres }}, en {{ ouder2_naam }}, wonende aan {{ ouder2_adres }}.",
+    "template_examples": [
+      "De ouders zijn Jan Jansen, wonende aan Prinsengracht 123, 1015 AB Amsterdam, en Maria de Vries, wonende aan Korte Poten 7, 2511 EB Den Haag."
+    ],
+    "summary_style": "Noem beide ouders met volledige naam en woonadres.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "juridische_situatie_1a",
+    "position": 2,
+    "question": "Wat is jullie burgerlijke staat? (gehuwd/geregistreerd/samenwonend/relatie beëindigd)",
+    "required_details": [
+      "Relatievorm (gehuwd/geregistreerd/samenwonend/relatie beëindigd)"
+    ],
+    "fields": {
+      "relatievorm": "enum: gehuwd|geregistreerd partnerschap|samenwonend|relatie beëindigd"
+    },
+    "summary_template": "De ouders zijn {{ relatievorm }}.",
+    "template_examples": [
+      "De ouders zijn gehuwd.",
+      "De ouders zijn geregistreerd partners."
+    ],
+    "summary_style": "Korte zin met relatievorm.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "gezag_1b",
+    "position": 3,
+    "question": "Wie heeft het gezag over de kinderen?",
+    "required_details": [
+      "Gezag (gezamenlijk/eenhoofdig)"
+    ],
+    "fields": {
+      "gezag": "enum: gezamenlijk|eenhoofdig"
+    },
+    "summary_template": "Het ouderlijk gezag wordt {{ 'gezamenlijk door beide ouders' if gezag == 'gezamenlijk' else 'eenhoofdig uitgeoefend' }}.",
+    "template_examples": [
+      "Het ouderlijk gezag wordt gezamenlijk door beide ouders uitgeoefend.",
+      "Het ouderlijk gezag wordt eenhoofdig uitgeoefend."
+    ],
+    "summary_style": "Korte zin met (gezamenlijk) of eenhoofdig gezag.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "relatie_tijdlijn_1c",
+    "position": 4,
+    "question": "Wanneer is de relatie gestart en/of beëindigd?",
+    "required_details": [
+      "Datum start/einde relatie (DD-MM-YYYY)"
+    ],
+    "template_examples": [
+      "De relatie is aangevangen op 12-03-2014 en beëindigd op 05-08-2023.",
+      "De relatie is aangevangen op 01-01-2018."
+    ],
+    "summary_style": "Start- en (indien van toepassing) einddatum relatie.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "kinderen_identiteit_2",
+    "position": 5,
+    "question": "Welke kinderen vallen onder dit plan? (per kind: volledige naam, geboortedatum en -plaats)",
+    "required_details": [
+      "Naam per kind",
+      "Geboortedatum per kind (DD-MM-YYYY)",
+      "Geboorteplaats per kind"
+    ],
+    "template_examples": [
+      "Anna Jansen – 14-06-2015 (Amsterdam); Lucas Jansen – 22-09-2018 (Haarlem)."
+    ],
+    "summary_style": "Lijst: Naam – DD-MM-YYYY (geboorteplaats).",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "betrokkenheid_kinderen_3",
+    "position": 6,
+    "question": "Hoe zijn de kinderen betrokken bij het plan (passend bij hun leeftijd)?",
+    "required_details": [
+      "Korte beschrijving gesprek(ken) met kinderen",
+      "Moment van betrekken (datum)",
+      "Wat is met de kinderen besproken"
+    ],
+    "template_examples": [
+      "De ouders hebben het plan op 10-10-2025 met de kinderen besproken; zij zijn in de gelegenheid gesteld hun wensen te uiten."
+    ],
+    "summary_style": "1–2 zinnen over betrokkenheid kinderen en moment.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "waarden_principes_4",
+    "position": 7,
+    "question": "Welke gezamenlijke principes hanteren jullie als ouders (respectvol ouderschap)?",
+    "required_details": [
+      "Minimaal 3 principes (bv. niet negatief spreken, kind centraal, conflicten buiten gehoor kind)"
+    ],
+    "template_examples": [
+      "De ouders spreken niet negatief over elkaar in het bijzijn van het kind, houden het belang van het kind voorop en lossen conflicten buiten het gehoor van het kind op."
+    ],
+    "summary_style": "Opsomming; elk principe op een nieuwe regel.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "hoofdverblijf_5a",
+    "position": 8,
+    "question": "Wat is de hoofdverblijfplaats per kind?",
+    "required_details": [
+      "Hoofdverblijf per kind (adres/ouder)",
+      "Inschrijving BRP geregeld? (ja/nee + datum)"
+    ],
+    "template_examples": [
+      "Het hoofdverblijf van Anna is bij Ouder 1 op [adres]; de BRP-inschrijving is op 01-09-2025 aangepast."
+    ],
+    "summary_style": "Per kind: hoofdverblijf en inschrijving BRP.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "kinderbijslag_budget_5b",
+    "position": 9,
+    "question": "Wie int de kinderbijslag en het kindgebonden budget?",
+    "required_details": [
+      "Ontvanger kinderbijslag",
+      "Ontvanger kindgebonden budget"
+    ],
+    "fields": {
+      "ontvanger_kinderbijslag": "string: naam ouder",
+      "ontvanger_kgb": "string: naam ouder"
+    },
+    "summary_template": "De kinderbijslag wordt ontvangen door {{ ontvanger_kinderbijslag }}. Het kindgebonden budget wordt ontvangen door {{ ontvanger_kgb }}.",
+    "template_examples": [
+      "De kinderbijslag wordt ontvangen door Ouder 1. Het kindgebonden budget wordt ontvangen door Ouder 2."
+    ],
+    "summary_style": "Wie ontvangt kinderbijslag en KGB.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "zorgverdeling_week_6",
+    "position": 10,
+    "question": "Wat is het wekelijkse zorgschema (ochtend/middag/avond/nacht; even/oneven weken)?",
+    "required_details": [
+      "Even/Oneven week indeling voor een ouder"
+    ],
+    "template_examples": [
+      "De dagelijkse zorg wordt gelijkelijk verdeeld met overdracht op vrijdag 17:00 uur; afwijkingen worden in overleg vastgelegd."
+    ],
+    "summary_style": "Eén regel met kernritme; afwijkingen kort benoemd.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "wissels_vervoer_7",
+    "position": 11,
+    "question": "Hoe en waar vinden overdrachten plaats en wie haalt/brengt?",
+    "required_details": [
+      "Wisselmomenten (dagen/tijden)",
+      "Locatie(s)",
+      "Wie haalt/brengt",
+      "Regel bij afwezigheid/ziekte (vervanging)"
+    ],
+    "template_examples": [
+      "Overdrachten vinden plaats op school op maandag en donderdag om 08:30 uur; bij afwezigheid wordt tijdig vervanging geregeld."
+    ],
+    "summary_style": "Bondig: wisselmoment + plek + wie haalt/brengt + vervangingsregel.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "contact_met_andere_ouder_8",
+    "position": 12,
+    "question": "Hoe houden kinderen contact met de andere ouder als ze niet daar zijn? (e.g. kanaal, frequentie, duur, wie initieert)",
+    "required_details": [
+      "Kanaal (bellen/video)"
+    ],
+    "template_examples": [
+      "Het kind heeft eenmaal per dag kort contact via video of telefoon, op initiatief van de niet-verblijvende ouder, tenzij dit het dagritme verstoort."
+    ],
+    "summary_style": "1 zin met kanaal, frequentie en eventuele grenzen.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "school_beleid_9",
+    "position": 13,
+    "question": "Welke afspraken maken jullie over school (keuze, ouderavonden, informatie-uitwisseling, huiswerk)?",
+    "required_details": [
+      "Besluitvorming schoolkeuze (samen/consentregel)",
+      "Aanwezigheid ouderavonden (samen/apart)",
+      "Ontvangen & doorsturen schoolinfo (middel/frequentie)",
+      "Huiswerkbegeleiding (wie/wanneer)"
+    ],
+    "template_examples": [
+      "Besluiten over school worden gezamenlijk genomen; beide ouders wonen ouderavonden bij. Schoolinformatie wordt door ieder binnen 24 uur gedeeld; huiswerkbegeleiding vindt plaats bij de verzorgende ouder op schooldagen."
+    ],
+    "summary_style": "2 zinnen over besluitvorming, aanwezigheid en infodeling.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "medisch_beleid_10",
+    "position": 14,
+    "question": "Hoe regelen jullie medische zorg (spoed/planbare zorg, toestemming, medicatie)?",
+    "required_details": [
+      "Wie plant niet-spoedeisende afspraken",
+      "Spoedprotocol (wie beslist + direct informeren)",
+      "Medicatiebeheer (bewaarplek, toediening, afstemming)",
+      "Tandartscontrole (frequentie/afspraak wie regelt)"
+    ],
+    "template_examples": [
+      "Niet-spoedeisende zorg wordt vooraf afgestemd; bij spoed handelt de aanwezige ouder en informeert de ander direct. Medicatie wordt conform voorschrift bewaard en toegediend; tandartscontroles vinden halfjaarlijks plaats."
+    ],
+    "summary_style": "Bondig protocol voor spoed en planbare zorg + medicatie.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "identiteit_documenten_11a",
+    "position": 15,
+    "question": "Wie beheert de legitimatiebewijzen en paspoorten van de kinderen?",
+    "required_details": [
+      "Beheer identiteitsbewijs per kind (ouder)"
+    ],
+    "template_examples": [
+      "Legitimatiebewijzen worden centraal bewaard; beheer vindt per kind plaats door de afgesproken ouder en documenten zijn op verzoek beschikbaar."
+    ],
+    "summary_style": "Beheerder per kind genoemd.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "reistoestemming_11b",
+    "position": 16,
+    "question": "Hoe regelen jullie toestemming voor reizen naar het buitenland?",
+    "required_details": [
+      "Toestemmingsprocedure buitenland (formulier + termijnen)"
+    ],
+    "fields": {
+      "termijn_dagen": "integer: aantal dagen vóór vertrek voor het toestemmingsverzoek"
+    },
+    "summary_template": "Voor reizen naar het buitenland verlenen de ouders vooraf schriftelijke toestemming met het standaard toestemmingsformulier; het verzoek wordt uiterlijk {{ termijn_dagen }} dagen vóór vertrek overgelegd.",
+    "template_examples": [
+      "Voor reizen naar het buitenland verlenen de ouders vooraf schriftelijke toestemming; het verzoek wordt uiterlijk 14 dagen vóór vertrek overgelegd."
+    ],
+    "summary_style": "Afspraak over toestemming voor reizen.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "verzekeringen_12",
+    "position": 17,
+    "question": "Welke verzekeringen zijn geregeld voor de kinderen?",
+    "required_details": [
+      "Zorgverzekering (op polis van welke ouder)",
+      "WA-verzekering (beide/één)"
+    ],
+    "fields": {
+      "zorgpolis_ouder": "string: naam ouder",
+      "wa_dekking": "enum: beide ouders|ouder 1|ouder 2"
+    },
+    "summary_template": "Het kind/de kinderen is/zijn voor zorg verzekerd op de polis van {{ zorgpolis_ouder }}. Een WA-verzekering is afgesloten door {{ wa_dekking }}.",
+    "template_examples": [
+      "Het kind is voor zorg verzekerd op de polis van Ouder 1. Een WA-verzekering is afgesloten door beide ouders."
+    ],
+    "summary_style": "1 zin: zorg- en WA-verzekering geregeld (op wiens polis).",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "vakanties_13",
+    "position": 18,
+    "question": "Hoe verdelen jullie schoolvakanties?",
+    "required_details": [
+      "Verdeling per vakantie (even/oneven of %)",
+      "Keuzewijze/keuzedeadlines",
+      "Bereikbaarheid & tijdelijke verblijfplaats"
+    ],
+    "template_examples": [
+      "De vakanties worden bij helfte verdeeld met jaarlijkse roulatie; keuzes worden uiterlijk 1 april doorgegeven. Beide ouders zijn tijdens vakanties bereikbaar."
+    ],
+    "summary_style": "Tabelsamenvatting per vakantie + keuze/rotatie.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "feestdagen_14",
+    "position": 19,
+    "question": "Hoe verdelen jullie de feestdagen (incl. samenloop met vakanties)?",
+    "required_details": [
+      "Verdeling per feestdag (even/oneven jaren)",
+      "Regel bij overlap met vakantie"
+    ],
+    "template_examples": [
+      "Feestdagen worden afwisselend per jaar verdeeld; bij overlap met vakanties heeft de feestdagregeling voorrang tenzij anders overeengekomen."
+    ],
+    "summary_style": "Korte lijst: per feestdag wie waar, met overlapregel.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "verjaardagen_15",
+    "position": 20,
+    "question": "Hoe regelen jullie verjaardagen (kind(eren) en ouders)?",
+    "required_details": [
+      "Dagdeel/locatie dag zelf",
+      "Kinderfeestje (wie organiseert)",
+      "Cadeauregeling",
+      "Contact met niet-verblijvende ouder"
+    ],
+    "template_examples": [
+      "Op de verjaardag van het kind is er contact met beide ouders; organisatie en cadeaus worden tijdig afgestemd."
+    ],
+    "summary_style": "Korte zin per categorie (kind/ouders).",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "familie_contacten_16a",
+    "position": 21,
+    "question": "Welke afspraken gelden over contact van de kinderen met familie, zoals opa’s en oma’s?",
+    "required_details": [
+      "Contact met familie andere ouder niet belemmeren (ja/nee + toelichting)"
+    ],
+    "template_examples": [
+      "Contact met familie van beide kanten wordt niet belemmerd, tenzij zwaarwegende belangen van het kind zich daartegen verzetten."
+    ],
+    "summary_style": "Afspraken over contact met familieleden.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "overlijden_ouder_16b",
+    "position": 22,
+    "question": "Wat is afgesproken over de situatie bij overlijden van een ouder?",
+    "required_details": [
+      "Beleid bij overlijden ouder (behoud familiebanden, voogdij, contactregeling)"
+    ],
+    "template_examples": [
+      "Bij overlijden van een ouder wordt de band met de familie van de overledene gerespecteerd; voogdij en contact worden conform wettelijke regels en het belang van het kind ingericht."
+    ],
+    "summary_style": "Afspraken over situatie bij overlijden van een ouder.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "opvang_oppas_17",
+    "position": 23,
+    "question": "Welke opvang/oppas gebruiken jullie (BSO/oppas/grootouders) en wie regelt/betaalt?",
+    "required_details": [
+      "Instantie/namen",
+      "Dagen/tijden",
+      "Wie regelt",
+      "Kostenverdeling"
+    ],
+    "template_examples": [
+      "BSO op ma/wo/vr; planning en betaling worden door de ouders afgestemd en naar rato verdeeld."
+    ],
+    "summary_style": "Korte zin over opvangvormen, planning en kosten.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "sport_hobby_18",
+    "position": 24,
+    "question": "Welke afspraken gelden over sport/muziek/hobby’s (aanmelding, begeleiding, vervoer, kosten)?",
+    "required_details": [
+      "Activiteit per kind",
+      "Wie beslist/rijdt",
+      "Aanschaf materiaal",
+      "Kostenverdeling"
+    ],
+    "template_examples": [
+      "Aanmelding in overleg; vervoer door de verzorgende ouder; materialen worden zo nodig gezamenlijk bekostigd."
+    ],
+    "summary_style": "Per activiteit: besluitvorming, vervoer, kosten.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "communicatie_19a",
+    "position": 25,
+    "question": "Hoe wisselen jullie informatie uit over de kinderen?",
+    "required_details": [
+      "Kanalen (mail/app/schriftje/co-parenting app)",
+      "Welke informatie wordt gedeeld (school, gezondheid, praktische zaken)"
+    ],
+    "template_examples": [
+      "De ouders communiceren primair via de co-parenting app; relevante informatie over school, gezondheid en praktische zaken wordt tijdig gedeeld."
+    ],
+    "summary_style": "Communicatiekanalen en soort informatie die wordt gedeeld.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "overleg_19b",
+    "position": 26,
+    "question": "Hoe vaak en op welke manier hebben jullie formeel overleg?",
+    "required_details": [
+      "Frequentie vast overleg (bv. maandelijks/halfjaarlijks)",
+      "Onderwerpen voor gezamenlijk besluit",
+      "Manier van verslaglegging of opvolging"
+    ],
+    "template_examples": [
+      "De ouders voeren halfjaarlijks een evaluatiegesprek; besluiten over belangrijke onderwerpen worden gezamenlijk genomen en vastgelegd."
+    ],
+    "summary_style": "Frequentie en invulling van formeel overleg.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "financien_20",
+    "position": 27,
+    "question": "Hoe verdelen jullie de kosten van de kinderen (alimentatie/kinderrekening)?",
+    "required_details": [
+      "Eigen aandeel & verdeelsleutel of alimentatiebedrag (€) en ingangsdatum",
+      "Betaaldatum/IBAN en wettelijke indexatie (ja/nee)",
+      "Zorgkorting (indien van toepassing)",
+      "Hoge/uitzonderlijke kosten (wat valt eronder; verdeling)",
+      "Kinderrekening (ja/nee; stortingsbedragen per ouder)"
+    ],
+    "template_examples": [
+      "De ouders dragen naar rato bij; een bijdrage van € 250 per maand gaat in per 01-01-2026, te voldoen vóór de 1e van de maand; wettelijke indexatie is van toepassing."
+    ],
+    "summary_style": "Zin met bedrag/verdeling, betaaldatum, indexatie en kinderrekening/hoge kosten.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "jongmeerderjarig_21",
+    "position": 28,
+    "question": "Welke afspraken gelden bij 18–21 jaar (betaling aan kind) en eventueel studiebijdrage >21?",
+    "required_details": [
+      "Betaalwijze (aan kind/aan ouder)",
+      "Rekening van het kind",
+      "Looptijd en indexatie",
+      "Eventuele studiebijdrage (bedrag/duur)"
+    ],
+    "template_examples": [
+      "Van 18–21 jaar wordt rechtstreeks aan het kind betaald op diens rekening; indexatie is van toepassing. Eventuele studiebijdrage na 21 jaar wordt in onderling overleg vastgesteld."
+    ],
+    "summary_style": "1 zin 18–21 (betaling aan kind) + zin over eventuele studiebijdrage.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "spaarrekeningen_kind_22",
+    "position": 29,
+    "question": "Bestaan er spaarrekeningen op naam van het kind en hoe beheer je die?",
+    "required_details": [
+      "Rekening(en) + IBAN",
+      "Beheerder",
+      "Transparantie/afspraken over aanwending",
+      "Maandelijkse inleg (ja/nee; bedrag)"
+    ],
+    "template_examples": [
+      "Er is een spaarrekening op naam van het kind; beheer is transparant en aanwending vindt in overleg plaats."
+    ],
+    "summary_style": "Zin over beheer + (optioneel) vaste inleg.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "verhuizen_23",
+    "position": 30,
+    "question": "Welke afspraken gelden bij verhuizen (afstand/reistijd, meldtermijn, herziening schema)?",
+    "required_details": [
+      "Meldtermijn (dagen/weken)",
+      "Max. afstand of reistijd",
+      "Procedure herziening zorgregeling"
+    ],
+    "fields": {
+      "meldtermijn": "string: bijv. 6 weken",
+      "grens": "string: bijv. 30 km of 45 minuten reistijd",
+      "herzieningsproces": "string: korte omschrijving procedure"
+    },
+    "summary_template": "Bij een voorgenomen verhuizing geldt een meldtermijn van {{ meldtermijn }}. De maximale afstand/reistijd bedraagt {{ grens }}. Indien verhuizen impact heeft op de zorgregeling, treden de ouders in overleg en volgen zij de procedure: {{ herzieningsproces }}.",
+    "template_examples": [
+      "Bij een voorgenomen verhuizing geldt een meldtermijn van 6 weken. De maximale reistijd bedraagt 45 minuten. Indien dit gevolgen heeft voor de zorgregeling, treedt men in overleg en wordt de regeling herzien."
+    ],
+    "summary_style": "Bondig: meldtermijn + grens (km/min) + herzieningsproces.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "nieuwe_partner_24",
+    "position": 31,
+    "question": "Hoe en wanneer introduceren jullie een nieuwe partner aan het kind?",
+    "required_details": [
+      "Moment/voorwaarden introductie",
+      "Afstemming tussen ouders (ja/nee; hoe)"
+    ],
+    "template_examples": [
+      "Introductie van een nieuwe partner vindt zorgvuldig en in overleg plaats, op een moment dat past bij het kind."
+    ],
+    "summary_style": "1 zin over voorwaarden + 1 zin over afstemming.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "evaluatie_geschillen_25",
+    "position": 32,
+    "question": "Wanneer en hoe evalueren jullie dit plan, en wat is de route bij geschillen?",
+    "required_details": [
+      "Evaluatiefrequentie (bv. jaarlijks/halfjaarlijks)",
+      "Bemiddeling/mediator (naam/organisatie)",
+      "Eventuele stap naar rechter"
+    ],
+    "fields": {
+      "evaluatie_frequentie": "string: bv. jaarlijks/halfjaarlijks",
+      "mediator": "string: naam/organisatie (optioneel)",
+      "geschilroute": "string: bijv. eerst mediation, dan rechter"
+    },
+    "summary_template": "Dit plan wordt {{ evaluatie_frequentie }} geëvalueerd. Bij geschillen schakelen de ouders eerst (indien mogelijk) {{ mediator if mediator else 'een mediator' }} in; indien geen oplossing wordt bereikt, volgen zij de route {{ geschilroute }}.",
+    "template_examples": [
+      "Dit plan wordt jaarlijks geëvalueerd. Bij geschillen wordt eerst een mediator ingeschakeld; indien nodig wordt een beslissing van de rechter gevraagd."
+    ],
+    "summary_style": "Zin over evaluatie + zin over bemiddeling/geschilroute.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  },
+  {
+    "id": "ondertekening_26",
+    "position": 33,
+    "question": "Zijn jullie akkoord met ondertekening als alle velden compleet zijn?",
+    "required_details": [
+      "Plaats/datum ondertekening",
+      "Naam ouder 1 + handtekening",
+      "Naam ouder 2 + handtekening"
+    ],
+    "fields": {
+      "plaats": "string: plaats van ondertekening",
+      "datum": "date: DD-MM-YYYY",
+      "ouder1_naam": "string",
+      "ouder2_naam": "string"
+    },
+    "summary_template": "Aldus overeengekomen en in tweevoud ondertekend te {{ plaats }} op {{ datum }} door {{ ouder1_naam }} en {{ ouder2_naam }}.",
+    "template_examples": [
+      "Aldus overeengekomen en in tweevoud ondertekend te Amsterdam op 06-11-2025 door Jan Jansen en Maria de Vries."
+    ],
+    "summary_style": "Plaats, datum en beide namen t.b.v. ondertekening.",
+    "answer": null,
+    "summary": null,
+    "status": "pending"
+  }
+]
